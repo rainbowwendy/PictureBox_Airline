@@ -54,7 +54,7 @@ Partial Class Form1
         TabPage1.Padding = New Padding(3)
         TabPage1.Size = New Size(1101, 649)
         TabPage1.TabIndex = 0
-        TabPage1.Text = "Business" ' 
+        TabPage1.Text = "Business"' 
         ' TabPage2
         ' 
         TabPage2.AutoScroll = True
@@ -74,7 +74,7 @@ Partial Class Form1
         Label3.Name = "Label3"
         Label3.Size = New Size(80, 20)
         Label3.TabIndex = 1
-        Label3.Text = "First Name" ' 
+        Label3.Text = "First Name"' 
         ' Label4
         ' 
         Label4.AutoSize = True
@@ -83,7 +83,7 @@ Partial Class Form1
         Label4.Name = "Label4"
         Label4.Size = New Size(79, 20)
         Label4.TabIndex = 2
-        Label4.Text = "Last Name" ' 
+        Label4.Text = "Last Name"' 
         ' TextBox3
         ' 
         TextBox3.Location = New Point(1221, 217)
@@ -106,10 +106,10 @@ Partial Class Form1
         Label1.Name = "Label1"
         Label1.Size = New Size(281, 20)
         Label1.TabIndex = 6
-        Label1.Text = "Please fill your name and select your seat" ' 
+        Label1.Text = "Please fill your name and select your seat"' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
         ClientSize = New Size(1452, 769)

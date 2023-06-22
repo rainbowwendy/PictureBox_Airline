@@ -1,4 +1,5 @@
-﻿Imports System.Reflection
+﻿Imports System.IO
+Imports System.Reflection
 
 Public Class Form1
     Dim BizClass(20) As PictureBox      'Biz = Business
@@ -7,9 +8,13 @@ Public Class Form1
     Dim EcoClassNames(100) As RichTextBox
     Dim NameBoxes(2) As TextBox
     Dim Names(2) As String 'Names(2)=> make 2 arrays
+    Dim airlineSeatRelativePath As String = "IMG/airlineSeat.png"
+    Dim airlineSeatEmptyRelativePath As String = "IMG/airlineSeatEmpty.png"
     'Dim myImageLocationPrefix As String = "C:\Repo\VB\PictureBox_Airline\PictureBox_Airline\bin\Debug\net6.0-windows"
-    Dim EmptySeatImg As String = "./airlineSeatEmpty.png" '이미지가 아닌 Text로 받으로 string type.
-    Dim FullSeatImg As String = "./airlineSeat.png"
+    Dim imagePathSeatPath As String = Path.Combine(Application.StartupPath, airlineSeatRelativePath)
+    Dim imagePathSeatEmptyPath As String = Path.Combine(Application.StartupPath, airlineSeatEmptyRelativePath)
+    'Dim EmptySeatImg As String = "./airlineSeatEmpty.png" '이미지가 아닌 Text로 받으로 string type.
+    'Dim FullSeatImg As String = "./airlineSeat.png"
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -23,7 +28,7 @@ Public Class Form1
         For index = 0 To 19 'loop for 20 seats
             'Mybox is where we are instantiating the PictureBoxObject
             BizClass(index) = New PictureBox() With { 'New PictureBox: PIctureBox라는 큰 덩어리의 것을 새로 부른다.
-            .ImageLocation = EmptySeatImg,
+            .ImageLocation = imagePathSeatEmptyPath,
             .Size = New Size(200, 200),
             .Location = New Point(xLocation, yLocation),
             .Name = "BizPictureBox" + index.ToString(),
@@ -60,7 +65,7 @@ Public Class Form1
 
         For index = 0 To 99 'For loop 100 seats
             EcoClass(index) = New PictureBox() With {
-            .ImageLocation = EmptySeatImg,
+            .ImageLocation = imagePathSeatEmptyPath,
             .Size = New Size(200, 200),
             .Location = New Point(xLocation, yLocation),
             .Name = "EcoPictureBox" + index.ToString(),
@@ -111,25 +116,25 @@ Public Class Form1
             End If
         End If
 
-        If PictureBoxClicked.ImageLocation = EmptySeatImg And BizOrEco = "Biz" Then
-            PictureBoxClicked.ImageLocation = FullSeatImg
+        If PictureBoxClicked.ImageLocation = imagePathSeatEmptyPath And BizOrEco = "Biz" Then
+            PictureBoxClicked.ImageLocation = imagePathSeatPath
             BizClassNames(PictureBoxIndex).Text = $"{Names(0)}: {NameBoxes(0).Text} {vbCrLf}{Names(1)}: {NameBoxes(1).Text} "
             Return
         End If
 
-        If PictureBoxClicked.ImageLocation = EmptySeatImg And BizOrEco = "Eco" Then
-            PictureBoxClicked.ImageLocation = FullSeatImg
+        If PictureBoxClicked.ImageLocation = imagePathSeatEmptyPath And BizOrEco = "Eco" Then
+            PictureBoxClicked.ImageLocation = imagePathSeatPath
             EcoClassNames(PictureBoxIndex).Text = $"{Names(0)}: {NameBoxes(0).Text} {vbCrLf}{Names(1)}: {NameBoxes(1).Text} "
             Return
         End If
 
         '--------- Cancellation
 
-        If PictureBoxClicked.ImageLocation = FullSeatImg And BizOrEco = "Biz" Then
+        If PictureBoxClicked.ImageLocation = imagePathSeatPath And BizOrEco = "Biz" Then
 
             Dim result As DialogResult = MessageBox.Show("Do you want to cancel your reservation?", "Please confirm", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                PictureBoxClicked.ImageLocation = EmptySeatImg
+                PictureBoxClicked.ImageLocation = imagePathSeatEmptyPath
                 BizClassNames(PictureBoxIndex).Text = ""
                 MessageBox.Show($"Your reservation has been cancelled.")
             ElseIf result = DialogResult.No Then
@@ -138,10 +143,10 @@ Public Class Form1
             Return
         End If
 
-        If PictureBoxClicked.ImageLocation = FullSeatImg And BizOrEco = "Eco" Then
+        If PictureBoxClicked.ImageLocation = imagePathSeatPath And BizOrEco = "Eco" Then
             Dim result As DialogResult = MessageBox.Show("Do you want to cancel your reservation?", "Please confirm", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                PictureBoxClicked.ImageLocation = EmptySeatImg
+                PictureBoxClicked.ImageLocation = imagePathSeatEmptyPath
                 EcoClassNames(PictureBoxIndex).Text = ""
                 MessageBox.Show($"Your reservation has been cancelled.")
             ElseIf result = DialogResult.No Then
@@ -149,5 +154,9 @@ Public Class Form1
             End If
             Return
         End If
+    End Sub
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
     End Sub
 End Class
