@@ -36,16 +36,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="IMG\airlineSeat.png">
+    <None Update="airlineSeat.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="IMG\airlineSeatEmpty.png">
+    <None Update="airlineSeatEmpty.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="IMG\" />
   </ItemGroup>
 
 </Project>

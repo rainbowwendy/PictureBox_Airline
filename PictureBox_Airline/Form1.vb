@@ -11,8 +11,8 @@ Public Class Form1
     Dim airlineSeatRelativePath As String = "IMG\airlineSeat.png"
     Dim airlineSeatEmptyRelativePath As String = "IMG\airlineSeatEmpty.png"
     'Dim myImageLocationPrefix As String = "C:\Repo\VB\PictureBox_Airline\PictureBox_Airline\bin\Debug\net6.0-windows"
-    Dim imagePathSeatPath As String = Application.StartupPath + "IMG\airlineSeat.png"
-    Dim imagePathSeatEmptyPath As String = Application.StartupPath + "IMG\airlineSeatEmpty.png"
+    Dim imagePathSeatPath As String = Application.StartupPath + "\airlineSeat.png"
+    Dim imagePathSeatEmptyPath As String = Application.StartupPath + "\airlineSeatEmpty.png"
     'Dim imagePathSeatEmptyPath As String = My.Resources.airlineSeatEmpty
     'Dim EmptySeatImg As String = "./airlineSeatEmpty.png" '이미지가 아닌 Text로 받으로 string type.
     'Dim FullSeatImg As String = "./airlineSeat.png"
