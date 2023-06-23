@@ -9,19 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="IMG\airlineSeat.png" />
-    <None Remove="IMG\airlineSeatEmpty.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="IMG\airlineSeat.png" />
-    <Resource Include="IMG\airlineSeatEmpty.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +36,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="IMG\airlineSeat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="IMG\airlineSeatEmpty.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
