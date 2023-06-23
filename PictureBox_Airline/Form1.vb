@@ -8,7 +8,7 @@ Public Class Form1
     Dim EcoClassNames(100) As RichTextBox
     Dim NameBoxes(2) As TextBox
     Dim Names(2) As String 'Names(2)=> make 2 arrays
-    Dim airlineSeatRelativePath As String = "..\..\..\IMG\airlineSeat.png"
+    Dim airlineSeatRelativePath As String = "IMG\airlineSeat.png"
     Dim airlineSeatEmptyRelativePath As String = "..\..\..\IMG\airlineSeatEmpty.png"
     'Dim myImageLocationPrefix As String = "C:\Repo\VB\PictureBox_Airline\PictureBox_Airline\bin\Debug\net6.0-windows"
     Dim imagePathSeatPath As String = Path.GetFullPath(airlineSeatRelativePath)
